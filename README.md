@@ -18,11 +18,11 @@ pnpm i hescript -D
 import type { HeScriptConfig } from 'hescript/src/index'
 
 export default {
-  rootDir: 'or-src'           // HeScript 文件根目录，将会把目录下所有 .js .ts .he 进行解析
-  outDir: 'src'               // HeScript 文件输出目录，.js .he 将会输出 .js 文件，.ts 将会输出 .ts 文件，此配置仅为 rootDir 的输出
-  files: ['a.js', 'b.js']     // HeScript 文件，可同时指定多个，不限制文件后缀，除 .ts 文件输出 .ts 文件，其他后缀一律输出 .js 文件
-  outFilesDir: 'files'        // HeScript 文件输出目录，此配置仅为 files 的输出
-  mode: 'Array'               // 模式设置，可选值：Array 或 Abbreviation。若为 Array 在检测是传入参数时将会直接传入 Array，否则将编译成多行传递参数
+  rootDir: 'or-src',           // HeScript 文件根目录，将会把目录下所有 .js .ts .he 进行解析
+  outDir: 'src',               // HeScript 文件输出目录，.js .he 将会输出 .js 文件，.ts 将会输出 .ts 文件，此配置仅为 rootDir 的输出
+  files: ['a.js', 'b.js'],     // HeScript 文件，可同时指定多个，不限制文件后缀，除 .ts 文件输出 .ts 文件，其他后缀一律输出 .js 文件
+  outFilesDir: 'files',        // HeScript 文件输出目录，此配置仅为 files 的输出
+  mode: 'Array',               // 模式设置，可选值：Array 或 Abbreviation。若为 Array 在检测是传入参数时将会直接传入 Array，否则将编译成多行传递参数
 } as HeScriptConfig
 ```
 
@@ -95,8 +95,8 @@ let a = [1, 2, 3];a[1 | 3] = 123;pressCon(1 | 2 | 3, 10);
 ```javascript
 require('hescript')
 function pressCon(key, force) {
-  if (config.mode === 'Array') console.log(Array.isArray(key)) // true
-  if (config.mode === 'Abbreviation') console.log(Array.isArray(key)) // false
+  // if (config.mode === 'Array') console.log(Array.isArray(key)) // true
+  // if (config.mode === 'Abbreviation') console.log(Array.isArray(key)) // false
 }
 
 pressCon(1    |3 |35|68 |  339911, 10)

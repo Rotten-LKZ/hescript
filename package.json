@@ -1,6 +1,6 @@
 {
   "name": "hescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "helang for JavaScript",
   "main": "./dist/index.js",
   "homepage": "https://github.com/Rotten-LKZ/hescript",
